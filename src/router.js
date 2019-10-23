@@ -12,6 +12,8 @@ import Address from  './views/Address';
 import Cart from  './views/Cart';
 import CategoryList from  './views/CategoryList';
 import UserCollection from  './views/UserCollection';
+import UserOrder from  './views/UserOrder';
+
 
 Vue.use(Router);
 
@@ -30,6 +32,7 @@ export default new Router({
     { path: '/cart', name: 'cart', component:Cart},
     { path: '/categoryList', name: 'categoryList', component:CategoryList},
     { path: '/userCollection', name: 'userCollection', component:UserCollection},
+    { path: '/userOrder', name: 'userOrder', component:UserOrder},
   ],
   scrollBehavior () {
     return { x: 0, y: 0 }

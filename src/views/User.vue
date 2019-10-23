@@ -55,16 +55,11 @@
                     <div class="orderListHd">
                         <h3>
                             <span>未完成订单</span>
-                            <router-link class="seeAllOrder" to="/">查看全部订单</router-link>
+                            <router-link class="seeAllOrder" to="/userOrder">查看全部订单</router-link>
                         </h3>
                     </div>
-                    <div class="listNullWraper">
-                        <div class="emptyStatus">
-                            <div class="icon icon-wupin"></div>
-                            <div class="emptyText">你已经很久没有下单了哦！</div>
-                            <router-link to="/" class="button">去逛逛</router-link>
-                        </div>
-                    </div>
+                    <NoData position="0 -2000px" />
+                    
                 </div>
             </div>
         </div>

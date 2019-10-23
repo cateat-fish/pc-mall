@@ -6,15 +6,8 @@
             <UserSide />
             <!-- 内容 -->
             <div class="main">
-                <div class="commonTab">
-                    <div class="innerWrap">
-                        <ul>
-                            <li class="item" :class="index == navC ? 'active' : ''" v-for="(item,index) in navData" :key='index'>
-                                <a @click="handleClick(index)">{{item.text}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <NavTab :tabList="tabList" @Click="handleClick" :init='init' />
+                <NoData  position="0 -1630px" />
             </div>
         </div>
         <!-- 底部 -->
@@ -26,12 +19,15 @@
 import MyHeader from "@/components/MyHeader/MyHeader.vue";
 import MyFooter from "@/components/MyFooter/MyFooter.vue";
 import UserSide from "@/components/UserSide/UserSide.vue";
+import NavTab from "@/components/navTab/navTab.vue";
+
 export default{
-  components: {  MyHeader, MyFooter  ,UserSide},
+  components: {  MyHeader, MyFooter  ,UserSide,NavTab},
     name:"msgCenter",
     data(){
         return{
-            navC:0,
+            tabList:['严选活动','我的资产','通知消息','物流助手','互动消息'],
+            init:0,
             navData:[
                 {text:'严选活动'},
                 {text:'我的资产'},
@@ -43,7 +39,10 @@ export default{
     },
     methods:{
         handleClick(i){
-            this.navC = i
+            if(i == this.init){
+                return
+            }
+            this.init = i
         }
     }
 }
@@ -79,7 +78,7 @@ export default{
                         cursor: pointer;
                         width: 150px;
                         padding: 10px 0;
-                        height: 40px;
+                        height: 38px;
                         font-weight: 900;
                         font-size: 18px;
                         color: #333;

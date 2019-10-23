@@ -34,7 +34,7 @@
                         {url:'',text:'我的甄选家'}
                     ]},
                     {title:'交易管理',list:[
-                        {url:'',text:'订单管理'},
+                        {url:'/userOrder',text:'订单管理'},
                         {url:'',text:'津贴'},
                         {url:'',text:'回馈金'},
                         {url:'',text:'我的红包'},

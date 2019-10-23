@@ -7,7 +7,7 @@
             <i class="logo"></i>
           </router-link>
           <!-- 小Logo -->
-          <router-link to="/" v-show="showNavTop" href="" class="tabLogo-fixed">
+          <router-link to="/" v-show="showNavTop" class="tabLogo-fixed">
             <i class="logo"></i>
           </router-link>
           <!-- cart -->
@@ -43,12 +43,12 @@
                   </ul>
                 </div>
             </li>
-            <li v-show="!showNavTop" class="tabNav-item">
+            <!-- <li v-show="!showNavTop" class="tabNav-item">
               <a href="" class="topLevel">为你严选</a>
             </li>
             <li v-show="!showNavTop" class="tabNav-item">
               <a href="" class="topLevel">众筹</a>
-            </li>
+            </li> -->
           </ul>
           <!-- search -->
           <div v-show="!showNavTop" class="search">
@@ -63,7 +63,7 @@
             <div class="hotKeywordListWrap">
               <div class="hotKeywordList">
                 <div class="hotKeywordRow">
-                  <div class="hotKeyword " v-for="(item,index) in hotSearch" :key="index">{{item}}</div>
+                  <div @click="handleHot(item)" class="hotKeyword " v-for="(item,index) in hotSearch" :key="index">{{item}}</div>
                 </div>
               </div>
             </div>
@@ -204,7 +204,6 @@ export default {
     }
   },
   mounted(){
-    
     window.addEventListener('scroll', this.handleScroll);
   },
   methods:{
@@ -213,6 +212,10 @@ export default {
       let value = e.target.value;
       this.searchValue = value;
       this.isShowInfo = value == '' ? true : false;
+    },
+    handleHot(e){
+      this.searchValue = e;
+      this.handleSearch();
     },
     // 点击搜索
     handleSearch(){
@@ -569,7 +572,7 @@ export default {
           top: -42px;
       }
       100%{
-         top: -42px;
+         top: 0px;
       }
     }
       
