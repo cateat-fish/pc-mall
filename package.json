@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "area-data": "^5.0.6",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^3.1.2",
     "sass-loader": "^8.0.0",
     "swiper": "^5.1.0",
